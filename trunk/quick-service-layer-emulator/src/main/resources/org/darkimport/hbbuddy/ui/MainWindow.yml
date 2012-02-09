@@ -1,0 +1,24 @@
+JFrame(name=frame, title=frame.main.title, size=packed, defaultCloseOperation=disposeOnClose):
+  - JMenuBar:
+    - JMenu(name=fileMenu, text=menu.file):
+      - JMenuItem(name=optionsMenu, text=menu.file.options, onAction=onFileOptions)
+      - JSeparator()
+      - JMenuItem(name=exitMenu, text=menu.file.exit, onAction=exit)
+    - JMenu(name=utilitiesMenu, text=menu.utilities):
+      - JMenuItem(name=fixHostsMenu, text=menu.utilities.fixHosts, onAction=fixHosts)
+      - JMenuItem(name=generateKeyStoreMenu, text=menu.utilities.generateKeyStore, onAction=generateKeyStore)
+      - JMenuItem(name=generateTrustStoreMenu, text=menu.utilities.generateTrustStore, onAction=generateTrustStore)
+      - JMenuItem(name=downloadMeshesMenu, text=menu.utilities.downloadMeshes, onAction=[$confirm,downloadMeshes])
+  - JButton(name=startPreAuth, text=button.serviceStart, onAction=[startPreAuth])
+  - JButton(name=startAuth, text=button.serviceStart, onAction=[startAuth])
+  - JButton(name=startMesh, text=button.serviceStart, onAction=[startMesh])
+  - JLabel(name=lblServices, text=label.services, font=bold 14pt)
+  - JLabel(name=lblPreAuth, text=label.preauth)
+  - JLabel(name=lblAuth, text=label.auth)
+  - JLabel(name=lblMesh, text=label.mesh)
+  - MigLayout: |
+      [pref]         [pref]
+      |lblServices+*
+      -lblPreAuth    startPreAuth+*=1
+      -lblAuth       startAuth=1
+      -lblMesh       startMesh=1
