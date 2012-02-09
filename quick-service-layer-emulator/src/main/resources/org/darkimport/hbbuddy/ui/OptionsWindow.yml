@@ -1,0 +1,52 @@
+JDialog(name=frame, title=frame.options.title, modal=true, size=packed, defaultCloseOperation=disposeOnClose):
+  - JPanel(name=grpServices, groupTitle=label.services, border=raisedEtched):
+    - JButton(name=btnOk, text=button.ok, onAction=[$validate,saveConfig])
+    - JButton(name=btnCancel, text=button.cancel, onAction=[$confirm,close])
+    - JButton(name=btnBrowsePreAuthReplays, text=button.browse, onAction=[browsePreAuthReplays])
+    - JButton(name=btnBrowseAuthReplays, text=button.browse, onAction=[browseAuthReplays])
+    - JButton(name=btnBrowseMeshPath, text=button.browse, onAction=[browseMeshPath])
+    - JLabel(name=lblPreAuth, text=label.preauth, font=bold 12pt)
+    - JLabel(name=lblAuth, text=label.auth, font=bold 12pt)
+    - JLabel(name=lblMesh, text=label.mesh, font=bold 12pt)
+    - MigLayout: |
+        [pref]                      [grow,50]                                           [pref]                       [grow,250]           [grow,50]         
+        |/lblPreAuth+*
+        >"label.portNumber"         txtPreAuthPort                                      >"label.hostName"            txtPreAuthHostName+*
+        >"label.replayFiles"        txtPreAuthReplayFiles+3,btnBrowsePreAuthReplays+*=2
+        >"label.isSecure"           cbxPreAuthIsSecure 
+        |/lblAuth+*                                                                                                                                 [grow,30]
+        >"label.portNumber"         txtAuthPort                                         >"label.hostName"            txtAuthHostName+*
+        >"label.replayFiles"        txtAuthReplayFiles+3,btnBrowseAuthReplays=2
+        >"label.isSecure"           cbxAuthIsSecure
+        |/lblMesh+*                                                                                                                                 [grow,30]
+        >"label.portNumber"         txtMeshPort                                         >"label.hostName"            txtMeshHostName+*
+        >"label.meshPath"           txtMeshPath+3,btnBrowseMeshPath=2
+        >"label.checkForUpdates"    cbxCheckForUpdates                                  >"label.remoteMeshHost"      txtRemoteMeshHost+*
+        |btnOk+*=1,btnCancel=1
+  - MigLayout: |
+      [pref]      
+      grpServices
+bind:
+  - txtPreAuthPort.text: this.config.preAuthEmulator.portNumber
+  - txtPreAuthHostName.text: this.config.preAuthEmulator.hostName
+  - txtPreAuthReplayFiles.text: this.config.preAuthEmulator.conversationPaths
+  - cbxPreAuthIsSecure.selected: this.config.preAuthEmulator.isSecure
+  - txtAuthPort.text: this.config.authEmulator.portNumber
+  - txtAuthHostName.text: this.config.authEmulator.hostName
+  - txtAuthReplayFiles.text: this.config.authEmulator.conversationPaths
+  - cbxAuthIsSecure.selected: this.config.authEmulator.isSecure
+  - txtMeshPort.text: this.config.meshEmulator.portNumber
+  - txtMeshHostName.text: this.config.meshEmulator.hostName
+  - txtMeshPath.text: this.config.meshEmulator.localMeshResourceBase
+  - cbxCheckForUpdates.selected: this.config.meshEmulator.checkForUpdates
+  - txtRemoteMeshHost.text: this.config.meshEmulator.remoteMeshHost
+validate:
+  - txtPreAuthPort.text: {mandatory: true, minValue: 1025, maxValue: 10000, label: label.preAuthPort}
+  - txtPreAuthHostName.text: {mandatory: true, label: label.preAuthHostName}
+  - txtPreAuthReplayFiles.text: {mandatory: true, label: label.preAuthReplayFiles}
+  - txtAuthPort.text: {mandatory: true, minValue: 1025, maxValue: 10000, label: label.authPort}
+  - txtAuthHostName.text: {mandatory: true, label: label.authHostName}
+  - txtAuthReplayFiles.text: {mandatory: true, label: label.authReplayFiles}
+  - txtMeshPort.text: {mandatory: true, minValue: 80, maxValue: 10000, label: label.meshPort}
+  - txtMeshHostName.text: {mandatory: true, label: label.meshHostName}
+  - txtMeshPath.text: {mandatory: true, label: label.meshPath}
