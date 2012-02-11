@@ -77,7 +77,8 @@ public class ConfigHelper {
 	 * exist.
 	 */
 	public static void initialize() {
-		// pull the default from the jar and put it into the base path.
+		// pull the default from the jar and put it into the base path if a
+		// config file is not already present.
 		InputStream in = null;
 		OutputStream out = null;
 
@@ -86,7 +87,6 @@ public class ConfigHelper {
 				in = ConfigHelper.class.getResourceAsStream(META_INF_DEFAULT_CONFIG_PROPERTIES);
 				out = new FileOutputStream(DEFAULT_CONFIG_PROPERTIES);
 				IOUtils.copy(in, out);
-				initialize(DEFAULT_CONFIG_PROPERTIES);
 			} catch (final Exception e) {
 				log.warn("Unable to pull out the default.", e);
 				// throw new RuntimeException(e);
@@ -95,6 +95,8 @@ public class ConfigHelper {
 				IOUtils.closeQuietly(out);
 			}
 		}
+
+		initialize(DEFAULT_CONFIG_PROPERTIES);
 	}
 
 	public static Properties getGroup(final String groupName) {
