@@ -5,10 +5,9 @@ JFrame(name=frame, title=frame.main.title, size=packed, defaultCloseOperation=di
       - JSeparator()
       - JMenuItem(name=exitMenu, text=menu.file.exit, onAction=exit)
     - JMenu(name=utilitiesMenu, text=menu.utilities):
-      - JMenuItem(name=fixHostsMenu, text=menu.utilities.fixHosts, onAction=fixHosts)
+      - JMenuItem(name=fixRoutesMenu, text=menu.utilities.fixRoutes, onAction=fixRoutes)
       - JMenuItem(name=generateKeyStoreMenu, text=menu.utilities.generateKeyStore, onAction=generateKeyStore)
       - JMenuItem(name=generateTrustStoreMenu, text=menu.utilities.generateTrustStore, onAction=generateTrustStore)
-      - JMenuItem(name=downloadMeshesMenu, text=menu.utilities.downloadMeshes, onAction=[$confirm,downloadMeshes])
   - JButton(name=startPreAuth, text=button.serviceStart, onAction=[startPreAuth])
   - JButton(name=startAuth, text=button.serviceStart, onAction=[startAuth])
   - JButton(name=startMesh, text=button.serviceStart, onAction=[startMesh])
