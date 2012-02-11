@@ -9,19 +9,15 @@ package org.darkimport.qsle.constants;
  */
 public interface ResourceConstants {
 
-	String BUTTON_SERVICESTART = "button.serviceStart";
-	String BUTTON_SERVICESTOP = "button.serviceStop";
-	String ERROR_SERVICE_STARTUP_TITLE = "error.service.startup.title";
-	String ERROR_SERVICE_STARTUP_PREAUTH = "error.service.startup.preauth";
-	String ERROR_SERVICE_STARTUP_AUTH = "error.service.startup.auth";
-	String ERROR_SERVICE_STARTUP_MESH = "error.service.startup.mesh";
-	String ERROR_SAVE_OPTION_GROUP = "error.save.optionGroup";
-	String ERROR_SAVE_OPTIONS_TITLE = "error.save.options.title";
-	String ERROR_OPTIONS_STARTUP_MESSAGE = "error.options.startup.message";
-	String ERROR_OPTIONS_STARTUP_TITLE = "error.options.startup.title";
-	String ERROR_HOSTS_EDITOR_OPEN_MESSAGE = "error.hosts.editor.open.message";
-	String ERROR_HOSTS_EDITOR_OPEN_TITLE = "error.hosts.editor.open.title";
-	String ERROR_HOSTS_EDITOR_WRITE_MESSAGE = "error.hosts.editor.write.message";
-	String ERROR_HOSTS_EDITOR_WRITE_TITLE = "error.hosts.editor.write.title";
+	String	BUTTON_SERVICESTART				= "button.serviceStart";
+	String	BUTTON_SERVICESTOP				= "button.serviceStop";
+	String	ERROR_SERVICE_STARTUP_TITLE		= "error.service.startup.title";
+	String	ERROR_SERVICE_STARTUP_PREAUTH	= "error.service.startup.preauth";
+	String	ERROR_SERVICE_STARTUP_AUTH		= "error.service.startup.auth";
+	String	ERROR_SERVICE_STARTUP_MESH		= "error.service.startup.mesh";
+	String	ERROR_SAVE_OPTION_GROUP			= "error.save.optionGroup";
+	String	ERROR_SAVE_OPTIONS_TITLE		= "error.save.options.title";
+	String	ERROR_OPTIONS_STARTUP_MESSAGE	= "error.options.startup.message";
+	String	ERROR_OPTIONS_STARTUP_TITLE		= "error.options.startup.title";
 
 }
