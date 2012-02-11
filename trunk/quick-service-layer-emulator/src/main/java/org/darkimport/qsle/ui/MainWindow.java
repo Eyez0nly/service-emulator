@@ -212,6 +212,10 @@ public class MainWindow extends JFrame {
 
 	}
 
+	public void fixRoutes() {
+
+	}
+
 	/**
 	 * We're going to use the route command instead.
 	 */
