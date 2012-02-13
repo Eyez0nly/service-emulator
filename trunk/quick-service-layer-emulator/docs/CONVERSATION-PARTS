@@ -1,0 +1,10 @@
+CONVERSATION-PARTS
+==========
+Loaded with a conversation file.
+==========
+
+Initially a conversation part will contain nothing but a piece of a
+conversation between a client and a server.
+
+However, it is planned that conversation parts may contain EL expressions that
+dynamically fill in certain aspects of a conversation.

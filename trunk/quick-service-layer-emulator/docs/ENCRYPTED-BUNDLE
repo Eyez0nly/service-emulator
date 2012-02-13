@@ -1,0 +1,13 @@
+ENCRYPTED BUNDLE
+==========
+May be loaded from the commandline or at runtime
+==========
+
+An encrypted bundle is identical in structure to a non-encrypted bundle. The
+only difference is that the encrypted bundle file is... well... encrypted.
+Additionally, the user must know that the bundle is encrypted. At the command
+line, the user will specify the -e flag. And in order for an encrypted bundle
+to be loaded from the UI, the user must select the "Open Encrypted Bundle" menu
+option.
+
+Initially, only one encryption method will be supported.
