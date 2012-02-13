@@ -1,0 +1,34 @@
+CONVERSATION-FILES
+==========
+Loaded with bundles or separately.
+==========
+
+Conversation files are used with repeater services only.
+
+They represent the conversation that will take place between the client and the
+server. A conversation element starts with:
+
+0000:client.filename:NNN
+
+Where 0000 represents 0 seconds on the conversation timeline.
+
+client tells us that this communication is sent by the client.
+
+filename is the name of the file that contains the contents of the
+communication.
+
+NNN is how many bytes this communication is expected to be.
+
+Following the first line, the time field will represent a number of
+milliseconds from the first communication.
+
+Additionally, a client communication will not make use of the contents of the
+referenced file. The name of the file is merely included for a user's
+reference.
+
+A server line looks like this:
+
+0100:server.filename:134
+
+In the case of a server communication, the file contents do matter as whatever
+is contained inthe file will be what is sent to the client.

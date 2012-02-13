@@ -1,0 +1,35 @@
+CONVERSATIONS
+==========
+May be loaded from the commandline (via a bundle) or at runtime
+==========
+
+Conversations come in two styles: self-contained archives and exploded. Both
+styles share similar characteristics, but they will each be described
+separately.
+
+Self-contained Archives
+----------
+
+The file name of the archive (the file extension is ignored) corresponds with
+the conversationNames property.
+
+The archive contains a conversation file (see CONVERSATION-FILES) in the root
+named "conversation". Additionally, the root contains the individual
+conversation components (see CONVERSATION-PARTS) referenced by the conversation
+file.
+
+Exploded Conversations
+----------
+
+These conversations are not contained in archives, and as the name suggests,
+the individual components of the conversation could be scattered throughout the
+filesystem.
+
+An exploded conversation begins with a reference to a conversation file. The
+name of the conversation file corresponds with the conversationNames property.
+
+In this type of conversation file, the references to the conversation
+components may be either relative OR absolute OR some combination of each.
+Subsequently, the conversation file need not restrict itself to referencing
+components that exist in just the directory in which the conversation file
+resides.

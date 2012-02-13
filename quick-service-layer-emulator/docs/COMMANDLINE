@@ -1,0 +1,19 @@
+-b <bundle file name>
+	Loads the specified bundle at startup. If the bundle is not found or if
+	there is an error loading the bundle, the application exits.
+	
+-e
+	Only used with -b. The specified bundle is encrypted. If -k is not present,
+	the user will be prompted to enter the key from the commandline.
+	
+-k <encryption key>
+	Only used with -e. Specified the encryption key that will be used to
+	decrypt the encrypted bundle.
+	
+-p <true|false>
+	Sets "Prompt for Each Script Element" in the options menu to the given.
+	value. While true, when starting a service bundle, the user will be
+	prompted to approve the execution of each element in the loaded bundle's
+	script. Note that this option has no effect on external programs that ask
+	for escalation. The behavior of those script elements is set separately.
+

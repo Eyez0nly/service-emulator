@@ -1,0 +1,41 @@
+SCRIPT
+==========
+Loaded from a bundle
+==========
+
+Every line of a script file specified either an external program to run or a
+defined service to run. Each line should contain a new directive.
+
+Services are specified by name. (e.g. exampleRepeater)
+
+External programs are specified with the string "ep" followed by the command
+and any commandline arguments. The command may be absolute, relative, or
+dynamic. A dynamic command is demarcated like this: ${EXAMPLE_COMMAND}. The
+value of ${EXAMPLE_COMMAND} will be sought in the config.properties. If it is
+not present, none of the script will be run.
+
+However, if a bundle containing dynamic commands is detected, before its script
+is run, the UI will prompt the user to fill in any missing dynamic command
+variables.
+
+Finally, if an external command requires permissions escalation, precede the
+command with "eep" instead of "ep".
+
+Examples:
+--------
+
+Start a service:
+
+exampleServiceName
+
+Execute an external command using an absolute path:
+
+ep C:\Windows\Notepad.exe somefile.txt
+
+Execute an external command using a dynamic variable:
+
+ep ${MailServer} smtp.host.com 25
+
+Execute a command that requires escalation:
+
+eep regedit.exe somefile.reg
