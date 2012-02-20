@@ -1,0 +1,6 @@
+In order to support user registration, bundles need to support bundle loaders. The loader can be specified
+and contained in the bundle file. If a bundle contains a loader, it must contain a certificate. If it
+does not, the bundle will not load. If the user declines the certificate, the bundle will not load.
+
+Once control is passed to the bundle loader, the bundle specification does not really matter -- just as
+long as all of the required elements are delivered to the client in some way.

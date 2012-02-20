@@ -1,0 +1,30 @@
+Need registry.properties to map service type to service class and options page name.
+Need settings folder
+- Contains config.properties
+- Contains registry.properties
+Need to shift gears on options page. Will implement one options page per service type. Expand in each case to
+	include new functionality (e.g. hosts or routes or local-only; if hosts, which DNS server to use)
+Need to implement limited scripting. Script files will point to: config.properties to use, any external programs
+	that need to run, which services need to run, the location of any relevant replay bundles. Will have
+	allowances for managing the order and timing of service starts and external program starts.
+Need to implement recording of traffic for repeater.
+Need to implement bundling of replay files.
+Need to implement encrypting/decrypting of replay bundles.
+Need to implement route/hosts checking on service start to ensure that the requested route/host is present.
+Implement creating keystore and truststore in app
+on run, create keystore if one does not exist.
+add config entry for keystore file location.
+add config entry for truststore file location.
+if ssl is required for a service, implement verifying the truststore.
+Implement if using hosts, bypassing the hosts file for passthrough connection
+Implement list of services instead of static services (two types: repeater and passthrough)
+
+Create redistributable mvn task
+- creates redistributable that contains:
+	* obfuscated main jar
+	* external library jars
+	* .bat file for invokation of app
+
+Verify code obfuscation
+
+Tokenize the path separator in the default config file. Poor man uses MessageFormat.
